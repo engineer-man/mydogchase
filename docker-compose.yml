@@ -1,0 +1,10 @@
+version: '3'
+services:
+    mydogchase:
+        container_name: mydogchase
+        build: .
+        volumes:
+            - .:/opt/src
+        ports:
+            - "2013:80"
+        command: bash -c "cd /opt/src && cargo run"

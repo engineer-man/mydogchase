@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Chase The Dog</title>
+    <style>
+        body {
+            background: #333;
+        }
+        h1 {
+            text-align: center;
+            font-size: 72px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .pictures {
+            text-align: center;
+        }
+        .pictures div {
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chase's Awesome Photo Gallery</h1>
+    <div class="pictures">
+        {{#each photos}}
+            <div style="background-image: url(/public/{{this}});"></div>
+        {{/each}}
+    </div>
+</body>
+</html>
