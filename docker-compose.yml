@@ -6,6 +6,6 @@ services:
         volumes:
             - .:/opt/src
         ports:
-            - "2013:80"
+            - "2013:8000"
         command: bash -c "cd /opt/src && cargo run"
         restart: always
