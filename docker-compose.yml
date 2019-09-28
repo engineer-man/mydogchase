@@ -8,3 +8,4 @@ services:
         ports:
             - "2013:80"
         command: bash -c "cd /opt/src && cargo run"
+        restart: always
