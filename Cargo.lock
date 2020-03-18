@@ -80,7 +80,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "cookie"
-version = "0.11.1"
+version = "0.11.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "base64 0.9.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -383,8 +383,8 @@ dependencies = [
 name = "mydogchase"
 version = "0.1.0"
 dependencies = [
- "rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket_contrib 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_contrib 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -563,7 +563,7 @@ dependencies = [
 
 [[package]]
 name = "rocket"
-version = "0.4.2"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "atty 0.2.13 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -572,8 +572,8 @@ dependencies = [
  "memchr 2.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "num_cpus 1.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "pear 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket_codegen 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket_http 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_codegen 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_http 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "state 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.42 (registry+https://github.com/rust-lang/crates.io-index)",
  "toml 0.4.10 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -583,42 +583,43 @@ dependencies = [
 
 [[package]]
 name = "rocket_codegen"
-version = "0.4.2"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "devise 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "glob 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "indexmap 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 0.6.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket_http 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_http 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "version_check 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "yansi 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "rocket_contrib"
-version = "0.4.2"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "glob 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "handlebars 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "notify 4.0.13 (registry+https://github.com/rust-lang/crates.io-index)",
- "rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.101 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.40 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "rocket_http"
-version = "0.4.2"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cookie 0.11.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cookie 0.11.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hyper 0.10.16 (registry+https://github.com/rust-lang/crates.io-index)",
  "indexmap 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pear 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "percent-encoding 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "smallvec 0.6.10 (registry+https://github.com/rust-lang/crates.io-index)",
+ "smallvec 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "state 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.42 (registry+https://github.com/rust-lang/crates.io-index)",
  "unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -676,6 +677,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "smallvec"
 version = "0.6.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "smallvec"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -886,7 +892,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum byteorder 1.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a7c3dd8985a7111efc5c80b44e23ecdd8c007de8ade3b96595387e812b957cf5"
 "checksum cc 1.0.45 (registry+https://github.com/rust-lang/crates.io-index)" = "4fc9a35e1f4290eb9e5fc54ba6cf40671ed2a2514c3eeb2b2a908dda2ea5a1be"
 "checksum cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
-"checksum cookie 0.11.1 (registry+https://github.com/rust-lang/crates.io-index)" = "99be24cfcf40d56ed37fd11c2123be833959bbc5bddecb46e1c2e442e15fa3e0"
+"checksum cookie 0.11.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d9fac5e7bdefb6160fb181ee0eaa6f96704b625c70e6d61c465cb35750a4ea12"
 "checksum devise 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "74e04ba2d03c5fa0d954c061fc8c9c288badadffc272ebb87679a89846de3ed3"
 "checksum devise_codegen 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "066ceb7928ca93a9bedc6d0e612a8a0424048b0ab1f75971b203d01420c055d7"
 "checksum devise_core 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "cf41c59b22b5e3ec0ea55c7847e5f358d340f3a8d6d53a5cf4f1564967f96487"
@@ -942,10 +948,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum regex 1.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "dc220bd33bdce8f093101afe22a037b8eb0e5af33592e6a9caafff0d4cb81cbd"
 "checksum regex-syntax 0.6.12 (registry+https://github.com/rust-lang/crates.io-index)" = "11a7e20d1cce64ef2fed88b66d347f88bd9babb82845b2b858f3edbf59a4f716"
 "checksum ring 0.13.5 (registry+https://github.com/rust-lang/crates.io-index)" = "2c4db68a2e35f3497146b7e4563df7d4773a2433230c5e4b448328e31740458a"
-"checksum rocket 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "42c1e9deb3ef4fa430d307bfccd4231434b707ca1328fae339c43ad1201cc6f7"
-"checksum rocket_codegen 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "79aa1366f9b2eccddc05971e17c5de7bb75a5431eb12c2b5c66545fd348647f4"
-"checksum rocket_contrib 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e0fa5c1392135adc0f96a02ba150ac4c765e27c58dbfd32aa40678e948f6e56f"
-"checksum rocket_http 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "b1391457ee4e80b40d4b57fa5765c0f2836b20d73bcbee4e3f35d93cf3b80817"
+"checksum rocket 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)" = "e20afbad214b001cabbe31dd270b48b3be980a7153ee2ed8392e241f856d651b"
+"checksum rocket_codegen 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)" = "2108b35e2c3a35759d3f16cc3002ece05523191d884d3ad6523693fd43324dde"
+"checksum rocket_contrib 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)" = "a10e7471279bc2d4a21b6fddd9589016bb119e6fbb547b216dd54ef237f28341"
+"checksum rocket_http 0.4.4 (registry+https://github.com/rust-lang/crates.io-index)" = "6ce8ca76247376ea21cf271af0f95e3f2014596e3e4c7cc04e44ee6242a40ff2"
 "checksum ryu 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c92464b447c0ee8c4fb3824ecc8383b81717b9f1e74ba2e72540aef7b9f82997"
 "checksum safemem 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "d2b08423011dae9a5ca23f07cf57dac3857f5c885d352b76f6d95f4aea9434d0"
 "checksum same-file 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "585e8ddcedc187886a30fa705c47985c3fa88d06624095856b36ca0b82ff4421"
@@ -954,6 +960,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum sha-1 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "23962131a91661d643c98940b20fcaffe62d776a823247be80a48fcb8b6fce68"
 "checksum slab 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "c111b5bd5695e56cffe5129854aa230b39c93a305372fdbb2668ca2394eea9f8"
 "checksum smallvec 0.6.10 (registry+https://github.com/rust-lang/crates.io-index)" = "ab606a9c5e214920bb66c458cd7be8ef094f813f20fe77a54cc7dbfff220d4b7"
+"checksum smallvec 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5c2fb2ec9bcd216a5b0d0ccf31ab17b5ed1d627960edff65bbe95d3ce221cefc"
 "checksum state 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "7345c971d1ef21ffdbd103a75990a15eb03604fc8b8852ca8cb418ee1a099028"
 "checksum syn 0.15.44 (registry+https://github.com/rust-lang/crates.io-index)" = "9ca4b3b69a77cbe1ffc9e198781b7acb0c7365a883670e8f1c1bc66fba79a5c5"
 "checksum syn 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "66850e97125af79138385e9b88339cbcd037e3f28ceab8c5ad98e64f0f1f80bf"
