@@ -5,7 +5,6 @@ extern crate rocket_contrib;
 
 use std::fs;
 use std::io;
-use std::io::{stdout, Write};
 use std::collections::HashMap;
 use rocket_contrib::serve::StaticFiles;
 use rocket_contrib::templates::Template;
@@ -14,7 +13,7 @@ use rocket_contrib::templates::Template;
 fn home() -> Template {
     let mut context = HashMap::new();
 
-    let mut files = fs::read_dir("public/chase")
+    let files = fs::read_dir("public/chase")
         .unwrap()
         .map(|result| {
             result.map(|file| {
