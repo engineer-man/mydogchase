@@ -11,7 +11,7 @@ mod routes;
 fn main() {
     rocket::ignite()
         .mount("/public", StaticFiles::from("public"))
-        .mount("/", routes![routes::home])
+        .mount("/", routes![routes::home, routes::favicon])
         .attach(Template::fairing())
         .launch();
 }
