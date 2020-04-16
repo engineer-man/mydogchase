@@ -2,6 +2,12 @@ use std::fs;
 use std::io;
 use std::collections::HashMap;
 use rocket_contrib::templates::Template;
+use rocket::response::NamedFile;
+
+#[get("/favicon.ico")]
+pub fn favicon() -> Option<NamedFile> {
+    NamedFile::open("static/favicon.ico").ok()
+}
 
 #[get("/")]
 pub fn home() -> Template {
