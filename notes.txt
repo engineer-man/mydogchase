@@ -1,0 +1,5 @@
+# strip exif:
+exiftool -all= *
+
+# reduce to 1000 height:
+mogrify -geometry x1000 *.jpg
