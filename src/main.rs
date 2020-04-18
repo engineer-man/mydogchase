@@ -2,6 +2,7 @@
 
 #[macro_use] extern crate rocket;
 extern crate rocket_contrib;
+extern crate alphanumeric_sort;
 
 use rocket_contrib::serve::StaticFiles;
 use rocket_contrib::templates::Template;

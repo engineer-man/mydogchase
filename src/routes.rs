@@ -24,10 +24,13 @@ pub fn home() -> Template {
         .unwrap();
 
     let mut photos = vec![];
+    println!("files {:?}", files);
 
     for file in files {
         photos.push(file);
     }
+    alphanumeric_sort::sort_path_slice(&mut photos);
+    println!("photos {:?}", photos);
 
     context.insert("photos", photos);
 
