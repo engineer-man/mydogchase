@@ -28,6 +28,8 @@ pub fn home() -> Template {
     for file in files {
         photos.push(file);
     }
+    alphanumeric_sort::sort_path_slice(&mut photos);
+    photos.reverse();
 
     context.insert("photos", photos);
 
