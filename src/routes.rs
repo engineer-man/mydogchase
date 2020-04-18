@@ -30,6 +30,7 @@ pub fn home() -> Template {
         photos.push(file);
     }
     alphanumeric_sort::sort_path_slice(&mut photos);
+    photos.reverse();
     println!("photos {:?}", photos);
 
     context.insert("photos", photos);
