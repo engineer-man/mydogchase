@@ -1,6 +1,8 @@
 use std::fs;
 use std::io;
 use std::collections::HashMap;
+use rand::thread_rng;
+use rand::seq::SliceRandom;
 use rocket_contrib::templates::Template;
 use rocket::response::NamedFile;
 
@@ -28,8 +30,8 @@ pub fn home() -> Template {
     for file in files {
         photos.push(file);
     }
-    alphanumeric_sort::sort_path_slice(&mut photos);
-    photos.reverse();
+
+    photos.shuffle(&mut thread_rng());
 
     context.insert("photos", photos);
 

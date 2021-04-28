@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 rocket = "0.4.4"
+rand = "0.8.3"
 alphanumeric-sort = "1.0.12"
 [dependencies.rocket_contrib]
 version = "0.4.4"
