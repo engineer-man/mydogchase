@@ -15,7 +15,6 @@ pub static EXAMPLE_HOME: &str = r#"<!doctype html>
 <html>
 <head>
     <title>Chase The Dog</title>
-    <link rel="shortcut icon" href="static/favicon.ico">
     <style>
         body {
             background: #333;
