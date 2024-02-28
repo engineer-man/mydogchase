@@ -27,9 +27,12 @@ async fn main() {
     if args.contains(&"-h".to_string()) || args.contains(&"--help".to_string()) {
         print_fancy(&[
             ("This program is designed to be a modular web service.\n", CYAN, vec![]),
-            ("There is a hardcoded path which mounts templates/home/home.html to /\n", CYAN, vec![]),
-            ("All other paths are read from config.toml\n", CYAN, vec![]),
-            ("If config.toml does not exist, an example project structure can be created.\n", CYAN, vec![]),
+            ("All html and media paths are read from the ", CYAN, vec![]),
+            ("config.toml", VIOLET, vec![]),
+            (" file.\n", CYAN, vec![]),
+            ("If ", CYAN, vec![]),
+            ("config.toml", VIOLET, vec![]),
+            (" does not exist, an example project structure can be created.\n", CYAN, vec![]),
             ("The config.toml file should contain something similar to the following.\n", CYAN, vec![]),
 
             ("\nip", BLUE, vec![]),
@@ -38,21 +41,37 @@ async fn main() {
 
             ("port", BLUE, vec![]),
             (" = ", WHITE, vec![]),
-            ("12345\n\n", CYAN, vec![]),
+            ("8000\n", CYAN, vec![]),
 
-            ("[routes]\n", ORANGE, vec![]),
+            ("ssl_enabled", BLUE, vec![]),
+            (" = ", WHITE, vec![]),
+            ("false\n", WHITE, vec![]),
 
-            ("\"/something\"", BLUE, vec![]),
+            ("ssl_port", BLUE, vec![]),
+            (" = ", WHITE, vec![]),
+            ("8443\n", CYAN, vec![]),
+
+            ("ssl_cert_path", BLUE, vec![]),
+            (" = ", WHITE, vec![]),
+            ("\"pems/cert.pem\"\n", CYAN, vec![]),
+
+            ("ssl_key_path", BLUE, vec![]),
+            (" = ", WHITE, vec![]),
+            ("\"pems/key.pem\"\n", CYAN, vec![]),
+
+            ("\n[routes]\n", ORANGE, vec![]),
+
+            ("\"/\"", BLUE, vec![]),
             (" = [", WHITE, vec![]),
-            ("\"static/home.html\"", CYAN, vec![]),
+            ("\"templates/home/home.html\"", CYAN, vec![]),
+            (", ", WHITE, vec![]),
+            ("\"public/chase\"", CYAN, vec![]),
             ("]\n", WHITE, vec![]),
 
-            ("\"/stuff\"", BLUE, vec![]),
+            ("\"/\"", BLUE, vec![]),
             (" = [", WHITE, vec![]),
-            ("\"static/stuff.html\"", CYAN, vec![]),
-            (", ", WHITE, vec![]),
-            ("\"static/media\"", CYAN, vec![]),
-            ("]", WHITE, vec![]),
+            ("\"templates/home/home.html\"", CYAN, vec![]),
+            ("]\n", WHITE, vec![]),
         ], NewLine);
         return;
     }

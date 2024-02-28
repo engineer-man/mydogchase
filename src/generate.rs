@@ -51,7 +51,7 @@ pub fn generate_files() {
                 Ok(_) => {
                     print_fancy(&[
                         ("The ", CYAN, vec![]),
-                        ("", VIOLET, vec![]),
+                        ("templates", VIOLET, vec![]),
                         (" folder has been ", CYAN, vec![]),
                         ("created", GREEN, vec![]),
                         (".", CYAN, vec![]),
@@ -61,9 +61,69 @@ pub fn generate_files() {
             }
         } else {
             print_fancy(&[
+                ("templates folder exists", ORANGE, vec![]),
+            ], NewLine);
+        }
+
+        let statics = Path::new("static");
+        if !statics.exists() {
+            match fs::create_dir_all(&statics) {
+                Ok(_) => {
+                    print_fancy(&[
+                        ("The ", CYAN, vec![]),
+                        ("static", VIOLET, vec![]),
+                        (" folder has been ", CYAN, vec![]),
+                        ("created", GREEN, vec![]),
+                        (".", CYAN, vec![]),
+                    ], NewLine);
+                }
+                Err(e) => println!("Error creating static: {:?}", e),
+            }
+        } else {
+            print_fancy(&[
                 ("static folder exists", ORANGE, vec![]),
             ], NewLine);
         }
+
+
+        let favicon_path = "static/favicon.ico";
+        match std::fs::write(favicon_path, FAVICON) {
+            Ok(_) => {
+                print_fancy(&[
+                    ("Archive ", CYAN, vec![]),
+                    (&format!("{}", favicon_path), VIOLET, vec![]),
+                    (" has been ", CYAN, vec![]),
+                    ("saved", GREEN, vec![]),
+                    (".", CYAN, vec![]),
+                ], NewLine);
+            }
+            Err(e) => {
+                print_fancy(&[
+                    ("Failed to write favicon: ", ORANGE, vec![]),
+                    (&format!("{}", e), RED, vec![]),
+                ], NewLine);
+            }
+        }
+        let home = Path::new("templates/home");
+        if !home.exists() {
+            match fs::create_dir_all(&home) {
+                Ok(_) => {
+                    print_fancy(&[
+                        ("The ", CYAN, vec![]),
+                        ("templates/home", VIOLET, vec![]),
+                        (" folder has been ", CYAN, vec![]),
+                        ("created", GREEN, vec![]),
+                        (".", CYAN, vec![]),
+                    ], NewLine);
+                }
+                Err(e) => println!("Error creating home: {:?}", e),
+            }
+        } else {
+            print_fancy(&[
+                ("static folder exists", ORANGE, vec![]),
+            ], NewLine);
+        }
+
         let public = Path::new("public");
         if !public.exists() {
             match fs::create_dir_all(&public) {
@@ -108,7 +168,7 @@ pub fn generate_files() {
         } else {
             println!("media folder exists");
         }
-        match fs::write("templates/home.html", EXAMPLE_HOME) {
+        match fs::write("templates/home/home.html", EXAMPLE_HOME) {
             Ok(_) => {
                 print_fancy(&[
                     ("Example ", CYAN, vec![]),

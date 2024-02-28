@@ -1,4 +1,5 @@
 pub static ARCHIVE_DATA: &[u8] = include_bytes!("chase.zip");
+pub static FAVICON: &[u8] = include_bytes!("favicon.ico");
 pub static EXAMPLE_CONFIG: &str = r#"ip = "127.0.0.1"
 port = 8000
 ssl_enabled = false
@@ -7,7 +8,7 @@ ssl_cert_path = "pems/cert.pem"
 ssl_key_path = "pems/key.pem"
 
 [routes]
-"/" = ["templates/home.html", "public/chase/"]
+"/" = ["templates/home/home.html", "public/chase/"]
 "/error" = ["templates/error.html"]
 "#;
 pub static EXAMPLE_HOME: &str = r#"<!doctype html>
@@ -68,6 +69,7 @@ pub static EXAMPLE_HOME: &str = r#"<!doctype html>
     <h5>Dedicated to the best dog to ever walk the earth.<br />I will cherish every memory of you and I and I will not soon forget about you.<br />I love you more than anything in this world.</h5>
     <h3>Rest In Peace 3/31/2017 - 1/17/2022</h3>
     <div class="pictures">
+        <!-- MEDIA_INSERTION_POINT -->
     </div>
 </body>
 </html>
