@@ -246,7 +246,8 @@ pub fn generate_files() {
                 print_fancy(&[
                     ("File ", CYAN, vec![]),
                     (&format!("{}", i), VIOLET, vec![]),
-                    (" extracted to ", CYAN, vec![]),
+                    (" extracted ", GREEN, vec![]),
+                    ("to ", CYAN, vec![]),
                     (&format!("{}", outpath.display()), VIOLET, vec![]),
                 ], NewLine);
                 if let Some(parent) = outpath.parent() {
