@@ -33,7 +33,9 @@ async fn main() {
             ("If ", CYAN, vec![]),
             ("config.toml", VIOLET, vec![]),
             (" does not exist, an example project structure can be created.\n", CYAN, vec![]),
-            ("The config.toml file should contain something similar to the following.\n", CYAN, vec![]),
+            ("The \n", CYAN, vec![]),
+            ("config.toml", VIOLET, vec![]),
+            (" file should contain something similar to the following.\n", CYAN, vec![]),
 
             ("\nip", BLUE, vec![]),
             (" = ", WHITE, vec![]),
@@ -109,12 +111,6 @@ async fn main() {
                 (&format!("http://{}:{}", config.ip, config.port), GREEN, vec![BOLD, ITALIC, UNDERLINED]),
             ], NewLine);
         }
-        print_fancy(&[
-            ("\nHardcoded routes:\n", CYAN, vec![BOLD, ITALIC, UNDERLINED]),
-            ("/", BLUE, vec![]),
-            (" -> ", CYAN, vec![]),
-            ("root", VIOLET, vec![]),
-        ], NewLine);
         print_fancy(&[
             ("\nConfigured routes:", CYAN, vec![BOLD, ITALIC, UNDERLINED]),
         ], NewLine);
