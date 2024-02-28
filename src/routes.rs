@@ -34,6 +34,7 @@ fn routes_static() -> Router {
 pub fn app(config: &Config) -> Router {
     let mut router = Router::new()
         .merge(routes_static())
+        .route("/favicon.ico", get_service(ServeDir::new("./static")))
         .fallback(get(not_found));
     for (path, settings) in &config.routes {
         if let Some(file_path) = settings.get(0) {
