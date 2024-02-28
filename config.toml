@@ -8,4 +8,3 @@ ssl_key_path = "pems/key.pem"
 [routes]
 "/" = ["templates/home/home.html", "public/chase/"]
 "/error" = ["templates/error.html"]
-"/static" = ["templates/error.html"]

@@ -10,7 +10,6 @@ ssl_key_path = "pems/key.pem"
 [routes]
 "/" = ["templates/home/home.html", "public/chase/"]
 "/error" = ["templates/error.html"]
-"/static" = ["templates/error.html"]
 "#;
 pub static EXAMPLE_HOME: &str = r#"<!doctype html>
 <html>
