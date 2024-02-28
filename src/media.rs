@@ -8,7 +8,7 @@ use crate::utils::{
 use crate::solarized::{print_fancy, RED, BOLD, PrintMode::NewLine};
 
 pub async fn render_error_page() -> Html<String> {
-    match fs::read_to_string("static/error.html") {
+    match fs::read_to_string("templates/error.html") {
         Ok(contents) => Html(contents),
         Err(_) => Html("<h1>Internal Server Error</h1>".to_string()),
     }
