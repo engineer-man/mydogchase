@@ -64,7 +64,6 @@ pub fn generate_files() {
                 ("templates folder exists", ORANGE, vec![]),
             ], NewLine);
         }
-
         let statics = Path::new("static");
         if !statics.exists() {
             match fs::create_dir_all(&statics) {
@@ -84,8 +83,6 @@ pub fn generate_files() {
                 ("static folder exists", ORANGE, vec![]),
             ], NewLine);
         }
-
-
         let favicon_path = "static/favicon.ico";
         match std::fs::write(favicon_path, FAVICON) {
             Ok(_) => {
@@ -123,7 +120,6 @@ pub fn generate_files() {
                 ("static folder exists", ORANGE, vec![]),
             ], NewLine);
         }
-
         let public = Path::new("public");
         if !public.exists() {
             match fs::create_dir_all(&public) {
@@ -241,8 +237,8 @@ pub fn generate_files() {
             if file_name.ends_with('/') {
                 print_fancy(&[
                     ("Directory ", CYAN, vec![]),
-                    (&format!("{}", i), VIOLET, vec![]),
-                    (" extracted to ", CYAN, vec![]),
+                    ("extracted", GREEN, vec![]),
+                    (" to ", CYAN, vec![]),
                     (&format!("{}", outpath.display()), VIOLET, vec![]),
                 ], NewLine);
                 std::fs::create_dir_all(&outpath).expect("Failed to create directory");
