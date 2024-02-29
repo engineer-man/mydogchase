@@ -2,8 +2,7 @@ use axum::response::Html;
 use std::fs;
 use crate::utils::{
     read_media_files,
-    is_image_file, is_video_file, is_audio_file, is_pdf_file,
-    get_video_mime_type, get_audio_mime_type
+    is_image_file,
 };
 use crate::solarized::{print_fancy, RED, BOLD, PrintMode::NewLine};
 
@@ -52,13 +51,7 @@ pub async fn render_html_with_media(file_path: &str, media_dir: &str, media_rout
             } else {
                 indentation
             };
-            if is_video_file(&file) {
-                format!("{}<video controls><source src='/public/{}/{}' type='video/{}'></video>{}", indent, media_route, file, get_video_mime_type(&file), file)
-            } else if is_audio_file(&file) {
-                format!("{}<audio controls><source src='/public/{}/{}' type='audio/{}'></audio>", indent, media_route, file, get_audio_mime_type(&file))
-            } else if is_pdf_file(&file) {
-                format!("{}<iframe src='/public/{}/{}' width='100%' height='600px'></iframe>", indent, media_route, file)
-            } else if is_image_file(&file) {
+            if is_image_file(&file) {
                 format!("{}<div style=\"background-image: url(/public/{}/{});\"></div>", indent, media_route, file)
             } else {
                 format!("")
