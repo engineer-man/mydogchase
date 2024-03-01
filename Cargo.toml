@@ -10,11 +10,11 @@ axum = "0.7.4"
 toml = "0.8.10"
 serde = { version = "1.0.197", features = ["derive"] }
 tower-http = { version = "0.5.2", features = ["fs"] }
-zip = "0.6.6"
 axum-server = { version = "0.6.0", features = ["tls-rustls"] }
 tokio = { version = "1.36.0", features = ["full"] }
 rand = "0.8.5"
 crossterm = "0.27.0"
+handlebars = "5.1.0"
 
 [profile.release]
 strip = true

@@ -6,5 +6,4 @@ ssl_cert_path = "pems/cert.pem"
 ssl_key_path = "pems/key.pem"
 
 [routes]
-"/" = ["templates/home/home.html", "public/chase/"]
 "/error" = ["templates/error.html"]

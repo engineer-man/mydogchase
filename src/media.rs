@@ -1,10 +1,5 @@
 use axum::response::Html;
 use std::fs;
-use crate::utils::{
-    read_media_files,
-    is_image_file,
-};
-use crate::solarized::{print_fancy, RED, BOLD, PrintMode::NewLine};
 
 pub async fn render_error_page() -> Html<String> {
     match fs::read_to_string("templates/error.html") {
@@ -13,15 +8,25 @@ pub async fn render_error_page() -> Html<String> {
     }
 }
 
-pub async fn render_html_with_media(file_path: &str, media_dir: &str, media_route: &str) -> Html<String> {
+fn read_media_files(dir: &str) -> std::io::Result<Vec<String>> {
+    let paths = fs::read_dir(dir)?;
+    let mut files = Vec::new();
+    for path in paths {
+        let path = path?.path();
+        if path.is_file() {
+            if let Some(file_name) = path.file_name().and_then(|f| f.to_str()) {
+                files.push(file_name.to_string());
+            }
+        }
+    }
+    Ok(files)
+}
+
+pub async fn render_html_with_media(file_path: &str, media_dir: &str) -> Html<String> {
     let content = match fs::read_to_string(file_path) {
         Ok(c) => c,
         Err(e) => {
-            print_fancy(&[
-                ("Error: Unable to read file: ", RED, vec![]),
-                (file_path, RED, vec![BOLD]),
-                (&format!(" - {}", e), RED, vec![])
-            ], NewLine);
+            println!("Unable to read file: {}", e);
             return render_error_page().await;
         }
     };
@@ -29,10 +34,7 @@ pub async fn render_html_with_media(file_path: &str, media_dir: &str, media_rout
         let mut media_files = match read_media_files(media_dir) {
             Ok(files) => files,
             Err(_) => {
-                print_fancy(&[
-                    ("Error: Unable to read media directory: ", RED, vec![]),
-                    (media_dir, RED, vec![BOLD]),
-                ], NewLine);
+                println!("Unable to read media directory: {}", media_dir);
                 return Html(content);
             }
         };
@@ -51,11 +53,7 @@ pub async fn render_html_with_media(file_path: &str, media_dir: &str, media_rout
             } else {
                 indentation
             };
-            if is_image_file(&file) {
-                format!("{}<div style=\"background-image: url(/public/{}/{});\"></div>", indent, media_route, file)
-            } else {
-                format!("")
-            }
+            format!("{}<div style=\"background-image: url(/public/chase/{});\"></div>", indent, file)
         }).collect::<Vec<_>>().join("\n");
         let mut new_content = content.clone();
         if let Some(_media_insertion_point) = new_content.find("<!-- MEDIA_INSERTION_POINT -->") {
@@ -68,19 +66,4 @@ pub async fn render_html_with_media(file_path: &str, media_dir: &str, media_rout
     } else {
         Html(content)
     }
-}
-
-pub async fn render_html(file_path: &str) -> Html<String> {
-    let content = match fs::read_to_string(file_path) {
-        Ok(c) => c,
-        Err(e) => {
-            print_fancy(&[
-                ("Error: Unable to read file: ", RED, vec![]),
-                (file_path, RED, vec![BOLD]),
-                (&format!(" - {}", e), RED, vec![])
-            ], NewLine);
-            return render_error_page().await;
-        }
-    };
-    Html(content)
 }
