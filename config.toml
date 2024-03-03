@@ -1,0 +1,9 @@
+ip = "0.0.0.0"
+port = 8000
+ssl_enabled = false
+ssl_port = 8443
+ssl_cert_path = "pems/cert.pem"
+ssl_key_path = "pems/key.pem"
+
+[routes]
+"/error" = ["templates/error.html"]
