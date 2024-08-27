@@ -1,19 +1,17 @@
 use std::fs;
 use std::io;
-use std::collections::HashMap;
 use rand::thread_rng;
 use rand::seq::SliceRandom;
-use rocket_contrib::templates::Template;
-use rocket::response::NamedFile;
+use rocket_dyn_templates::{Template, context};
+use rocket::fs::NamedFile;
 
 #[get("/favicon.ico")]
-pub fn favicon() -> Option<NamedFile> {
-    NamedFile::open("static/favicon.ico").ok()
+pub async fn favicon() -> Option<NamedFile> {
+    NamedFile::open("static/favicon.ico").await.ok()
 }
 
 #[get("/")]
 pub fn home() -> Template {
-    let mut context = HashMap::new();
 
     let files = fs::read_dir("public/chase")
         .unwrap()
@@ -33,7 +31,7 @@ pub fn home() -> Template {
 
     photos.shuffle(&mut thread_rng());
 
-    context.insert("photos", photos);
-
-    Template::render("home/home", &context)
+    Template::render("home/home", context! {
+        photos: photos,
+    })
 }
